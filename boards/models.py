@@ -10,7 +10,7 @@ class Board(models.Model):
     def __str__(self):
         return self.name
 
-class Topic(models.Model):
+class Topic(models.Model):  
     subject=models.CharField(max_length=222)
     board=models.ForeignKey(Board,related_name='topics',on_delete=models.CASCADE)
     created_by=models.ForeignKey(User,related_name='topics',on_delete=models.CASCADE)
